@@ -365,7 +365,7 @@ const ADMIN_CONFIG = Object.freeze({
 // ── GitHub Sync Config ───────────────────────────────────────
 // O token NUNCA fica aqui — é digitado pelo admin no painel
 const GITHUB_CONFIG = {
-  repo: "https://github.com/victor-manel/imperio-estoque", // ALTERE AQUI
+  repo: "https://github.com/victor-manel/imperio-estoque/blob/main/estoque.json", // ALTERE AQUI
   branch: "main",
   file: "estoque.json",
   pollInterval: 15000,
