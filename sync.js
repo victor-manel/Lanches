@@ -19,7 +19,7 @@
     repo:   "victor-manel/imperio-estoque",  // ← ALTERE
     branch: "main",
     file:   "estoque.json",
-    token:  "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",              // ← cole o ghp_... aqui
+    token:  "",              // ← cole o ghp_... aqui
     poll:   15_000,          // ms entre verificações dos clientes
   };
 
