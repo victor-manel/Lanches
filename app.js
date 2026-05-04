@@ -300,7 +300,7 @@ const MENU = [
     price: 7, image: "imagem/hotdog.webp", badge: null, modifiers: [],
   },
   {
-    id: 40, category: "cachorro-quente", name: "Carne na Nata",
+    id: 40, category: "cachorro-quente", name: "Cachorro-Quente Carne na Nata",
     description: "Pão, carne de sol na nata, salsicha, milho, ervilha, batata palha e queijo ralado",
     price: 9, image: "imagem/Cachorro-quente-nata.jpg", badge: "ESPECIAL", modifiers: [],
   },
@@ -2151,9 +2151,6 @@ function buildReview() {
   setText("reviewTotal",    fmt(total));
 }
 
-// ============================================================
-// ENVIAR PEDIDO VIA WHATSAPP
-// ============================================================
 function sendToWhatsApp() {
   if (!validateStep1()) {
     goToStep(1);
@@ -2216,14 +2213,24 @@ function sendToWhatsApp() {
   const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank", "noopener,noreferrer");
 
-  // Limpa estado pós-pedido
-  State.cart = [];
-  saveCart();
+  // ── Limpeza completa do carrinho ──────────────────────────
+  State.cart.length = 0;                          // esvazia sem trocar referência
+  localStorage.removeItem(CONFIG.cartStorageKey); // remove direto do storage
+  
+  // ── Fecha o checkout ──────────────────────────────────────
+  const checkoutModal = $("checkoutModal");
+  if (checkoutModal) {
+    checkoutModal.classList.remove("active");
+    checkoutModal.setAttribute("aria-hidden", "true");
+  }
+  $("overlay")?.classList.remove("active");
+  document.body.style.overflow = "";
+
+  // ── Atualiza UI APÓS limpar ───────────────────────────────
   updateCartUI();
-  closeCheckout();
+
   showToast("Pedido enviado! 🎉", "Aguarde a confirmação pelo WhatsApp", "success");
 }
-
 // ============================================================
 // TOAST — Sistema de notificações
 // ============================================================
