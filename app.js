@@ -258,7 +258,7 @@ const MENU = [
     price: 13, image: "imagem/xcarnesol.jpg", badge: "ESPECIAL", modifiers: [],
   },
   {
-    id: 26, category: "hamburgueres", name: "Moda da Casa",
+    id: 26, category: "hamburgueres", name: "Hamburguer Moda da Casa",
     description: "Pão, hambúrguer duplo, ovo, presunto duplo, queijo duplo, bacon, frango, salsicha, catupiry, alface e tomate",
     price: 15,
     image: "https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?w=400&q=80",
@@ -272,7 +272,7 @@ const MENU = [
     price: 18, image: "imagem/xchedar.webp", badge: "ARTESANAL", modifiers: [],
   },
   {
-    id: 28, category: "hamburgueres-artesanal", name: "Duplo Cheddar",
+    id: 28, category: "hamburgueres-artesanal", name: "Hamburguer Duplo Cheddar",
     description: "Pão brioche, dois hambúrgueres artesanais (100g cada), cheddar, bacon, cebola roxa e molho especial",
     price: 22, image: "imagem/duplochedar.jpg", badge: "PREMIUM", modifiers: [],
   },
@@ -295,7 +295,7 @@ const MENU = [
 
   // CACHORRO-QUENTE
   {
-    id: 39, category: "cachorro-quente", name: "Tradicional",
+    id: 39, category: "cachorro-quente", name: "Cachorro-Quente Tradicional",
     description: "Pão, carne moída, salsicha, frango, batata palha, milho, ervilha e queijo ralado",
     price: 7, image: "imagem/hotdog.webp", badge: null, modifiers: [],
   },
